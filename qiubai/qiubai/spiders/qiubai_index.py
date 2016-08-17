@@ -8,8 +8,8 @@ class QiubaiSpider(scrapy.Spider):
 
 	def parse(self, response):
 		with open("res.txt","w") as f:
-			reslist = response.xpath('//*[@id="qiushi_tag_117292272"]/div[@class="content"]/text()').extract()
-			for i in range(0,len(reslist)):
+			reslist = response.xpath('//div[@class="content"]/text()').extract()
+			for i in range(len(reslist)):
 				res =reslist[i].strip()
 				print res
 				f.write(res.strip().encode("utf-8"))

@@ -13,6 +13,7 @@ class Gov_Affair_Topic_Spider(scrapy.Spider):
 	def parse(self, response):
 		with open("personal_affair_topic.txt","w") as f:
 			res = response.xpath('//div[@id="sxicondata"]//li//div/font/text()').extract()
-			from scrapy.shell import inspect_response
-			inspect_response(response, self)
+			# from scrapy.shell import inspect_response
+			# inspect_response(response, self)
 			#f.write(res[0].encode("utf-8"))
+			print res[0]
