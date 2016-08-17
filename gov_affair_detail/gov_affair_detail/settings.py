@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for qiubai project
+# Scrapy settings for gov_affair_detail project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,16 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'qiubai'
+BOT_NAME = 'gov_affair_detail'
 
-SPIDER_MODULES = ['qiubai.spiders']
-NEWSPIDER_MODULE = 'qiubai.spiders'
+SPIDER_MODULES = ['gov_affair_detail.spiders']
+NEWSPIDER_MODULE = 'gov_affair_detail.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'qiubai (+http://www.yourdomain.com)'
-#USER_AGENT= 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36'
-
+#USER_AGENT = 'gov_affair_detail (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -49,15 +47,14 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'qiubai.middlewares.MyCustomSpiderMiddleware': 543,
+#    'gov_affair_detail.middlewares.MyCustomSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-#   'qiubai.middlewares.MyCustomDownloaderMiddleware': 543,
-	'qiubai.middlewares.RandomUAMiddleware': 600,
-}
+#DOWNLOADER_MIDDLEWARES = {
+#    'gov_affair_detail.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -67,11 +64,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   'qiubai.pipelines.MongoPipeline': 300,
-}
-MONGO_URI = "127.0.0.1:27017"
-MONGO_DATABASE = "qiubai"
+#ITEM_PIPELINES = {
+#    'gov_affair_detail.pipelines.SomePipeline': 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

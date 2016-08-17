@@ -1,5 +1,7 @@
 # -*- conding: utf-8 -*-
 import scrapy
+from qiubai.items import QiubaiItem
+
 class QiubaiSpider(scrapy.Spider):
 	name = "qiubai"
 	start_urls = [
@@ -7,10 +9,7 @@ class QiubaiSpider(scrapy.Spider):
 	]
 
 	def parse(self, response):
-		with open("res.txt","w") as f:
-			reslist = response.xpath('//div[@class="content"]/text()').extract()
-			for i in range(len(reslist)):
-				res =reslist[i].strip()
-				print res
-				f.write(res.strip().encode("utf-8"))
-				f.write("\n")
+			for ele in response.xpath('//div[@class="article block untagged mb15"]'):
+				authors = ele.xpath('./div[@class="author clearfix"]/a[2]/h2/text()').extract()
+				contents = ele.xpath('./div[@class="content"]/text()').extract()
+				yield QiubaiItem(author=authors,content=contents)
