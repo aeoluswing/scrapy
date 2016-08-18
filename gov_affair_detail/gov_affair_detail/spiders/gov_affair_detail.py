@@ -42,8 +42,8 @@ class Gov_Affair_Detail_Spider(scrapy.Spider):
 			content_guide_item_contents = ele.xpath(
 					'./div[@class="item-fwdx"]/p/text() | ./div[@class="item-right"]/text() | ./div[@class="item-right"]/descendant::*/text()').extract()
 			for subindex in range(0,len(content_guide_item_contents)):
-				content_guide_contents[subindex] = content_guide_contents[subindex].strip()
-			content_guide_item_content = '\n'.join(content_guide_contents)
+				content_guide_item_contents[subindex] = content_guide_item_contents[subindex].strip()
+			content_guide_item_content = '\n'.join(content_guide_item_contents)
 			content_guide_contents.append({content_guide_item:content_guide_item_content})
 
 		#yield GovAffairDetailItem(affair_detail_topic=detail_topic,perinfo_contents=perinfo_contents,)
