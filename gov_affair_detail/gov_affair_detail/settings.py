@@ -64,9 +64,11 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'gov_affair_detail.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'gov_affair_detail.pipelines.MongoPipeline': 300,
+}
+MONGO_URI = "127.0.0.1:27017"
+MONGO_DATABASE = "gov_affair_detail"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
