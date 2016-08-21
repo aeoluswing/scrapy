@@ -27,7 +27,6 @@ class Gov_Affair_Detail_Spider(scrapy.Spider):
 				perinfo_item_contents[subindex] = perinfo_item_contents[subindex].replace('\t','').replace('\n','').replace('\r','').replace(' ','')
 				perinfo_content += perinfo_item_contents[subindex]
 			perinfo_contents[perinfo_item] = perinfo_content
-			print perinfo_contents[perinfo_item] + "!"
 		perinfo_contents_json = json.dumps(perinfo_contents,ensure_ascii=False,encoding='utf-8')
 
 		# deal with content_guide contents
