@@ -28,6 +28,17 @@ class MongoPipeline(object):
 
     def process_item(self, item, spider):
         collection_name = item.__class__.__name__
-        self.db[collection_name].insert(dict(item))
+        content_dict = {}
+        item_dict = dict(item)
+
+        for k,v in item_dict['content_guide_contents'].items():
+            content_dict[k] = v
+
+        for k,v in item_dict['perinfo_contents'].items():
+            content_dict[k] = v
+
+        content_dict['办事名称'] = item['affair_topic']
+        content_dict['办事主题'] = item['affair_type']
+        self.db[collection_name].insert(content_dict)
         return item
 
