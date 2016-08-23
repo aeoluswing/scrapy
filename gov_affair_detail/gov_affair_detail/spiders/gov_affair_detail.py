@@ -27,6 +27,7 @@ class Gov_Affair_Detail_Spider(scrapy.Spider):
 	name = "gov_affair_detail"
 
 	# config excel params
+	# edit this part per script
 	data_dict = {}
 	exc_file_path = "F:/document/dailywork/2016-8-1scrapy/gov_affair_urls_private.xlsx"
 	exc_sheet_name = "Sheet2"
@@ -38,7 +39,7 @@ class Gov_Affair_Detail_Spider(scrapy.Spider):
 
 	# config re pattern
 	pattern = re.compile(r'[\s:]+',re.I | re.M)
-	pattern_nbsp = re.compile(u'\xa0+',re.I | re.M) # \xa0 = &nbsp;
+	#pattern_nbsp = re.compile(u'\xa0+',re.I | re.M) # \xa0 = &nbsp;
 
 	def parse(self, response):
 		time.sleep(2)
