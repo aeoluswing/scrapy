@@ -29,8 +29,8 @@ class Gov_Affair_Detail_Spider(scrapy.Spider):
 	# config excel params
 	# edit this part per script
 	data_dict = {}
-	exc_file_path = "F:/document/dailywork/2016-8-1scrapy/gov_affair_urls_private.xlsx"
-	exc_sheet_name = "Sheet2"
+	exc_file_path = "F:/document/dailywork/2016-8-1scrapy/gov_affair_urls_enterprise_test.xls"
+	exc_sheet_name = "Sheet1"
 
 	start_urls = get_url_dict(exc_file_path,exc_sheet_name,data_dict).keys()
 	# start_urls = [
