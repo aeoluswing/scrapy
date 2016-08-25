@@ -11,9 +11,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def show_result():
-	client = pymongo.MongoClient(MONGO_DATABASE)
+	client = pymongo.MongoClient(MONGO_URI)
 	db = client[MONGO_DATABASE]
-	results = db["GovAffairDetails"].find()
+	results = db["GovAffairDetailItem"].find()
 	client.close()
 	return render_template('result_index.html',p_results=results)
 

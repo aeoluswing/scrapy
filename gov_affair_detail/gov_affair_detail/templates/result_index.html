@@ -6,13 +6,12 @@
 </head>
 <body>
     {% for result in p_results %}
-    <h3>id:</h3><h3>{{ result.'_id' }}</h3>
-    <h4>办事名称:</h4><h4>{{ result.'办事名称' }}</h4>
     <ul>
         {% for item in result %}
-        <li>{{ item }}</li>
+        <li>{{ item }}:{{ result[item] }}</li>
         {% endfor %}
     </ul>
+    <hr />
     {% endfor %}
 </body>
 </html>
